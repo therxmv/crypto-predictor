@@ -50,14 +50,6 @@ ipython_config.py
 # Claude Code
 .claude/
 
-# Data files (often large, download separately)
-data/raw/*.csv
-data/raw/*.parquet
-data/raw/*.json
-data/processed/*.csv
-data/processed/*.parquet
-data/processed/*.json
-
 # Keep directory structure
 !data/raw/.gitkeep
 !data/processed/.gitkeep
