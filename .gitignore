@@ -68,6 +68,7 @@ results/figures/*.jpg
 results/figures/*.svg
 results/metrics/*.csv
 results/metrics/*.json
+results/metrics/*.txt
 
 # Keep directory structure
 !results/figures/.gitkeep
