@@ -39,18 +39,14 @@
 ## Структура проєкту
 
 ```
-bigdata-timeseries-forecast/
+big-data/
 │
-├── CLAUDE.md              # Інструкції для Claude
-├── PLAN.md                # План реалізації
-├── TASKS.md               # Чек-лист завдань
 ├── README.md              # Цей файл
 ├── requirements.txt       # Залежності Python
 │
 ├── data/
-│   ├── raw/              # Вхідні дані
-│   │   └── BTC-USD.csv
-│   └── processed/        # Оброблені дані
+│   └── raw/              # Вхідні дані (CSV файли)
+│       └── BTC-USD.csv
 │
 ├── notebooks/
 │   └── final_lab.ipynb   # Основний notebook
@@ -64,12 +60,9 @@ bigdata-timeseries-forecast/
 │   ├── metrics.py        # Метрики оцінки
 │   └── visualization.py  # Візуалізація
 │
-├── results/
-│   ├── figures/          # Графіки
-│   └── metrics/          # Метрики помилок
-│
-└── reports/
-    └── report.md         # Звіт українською
+└── results/
+    ├── figures/          # Графіки візуалізації
+    └── metrics/          # Метрики помилок (JSON, TXT)
 ```
 
 ## Вимоги до даних
@@ -157,17 +150,47 @@ x_norm = (x_i - x_min) / (x_max - x_min)
 
 ## Результати
 
-Після виконання генеруються:
-- **Графіки** в `results/figures/`:
-  - Повний часовий ряд
-  - Приклади фрагментів
-  - Кластери схожих патернів
-  - Прогноз проти фактичних значень
-  
-- **Метрики** в `results/metrics/`:
-  - MAE (Mean Absolute Error)
-  - RMSE (Root Mean Square Error)
-  - MAPE (Mean Absolute Percentage Error)
+Після виконання ноутбуку генеруються візуалізації та метрики оцінки прогнозу.
+
+### Візуалізації
+
+Система створює 10 графіків, що демонструють весь процес аналізу та прогнозування:
+
+#### 1. Повний часовий ряд
+![Часовий ряд](results/figures/01_full_time_series.png)
+
+#### 2. Приклади сирих фрагментів
+![Сирі фрагменти](results/figures/02_raw_fragments.png)
+
+#### 3. Нормалізовані фрагменти
+![Нормалізовані фрагменти](results/figures/03_normalized_fragments.png)
+
+#### 4. Порівняння: сирі vs нормалізовані
+![Порівняння](results/figures/04_raw_vs_normalized.png)
+
+#### 5. Теплова карта SOM
+![SOM Heatmap](results/figures/05_som_heatmap.png)
+
+#### 6. Топ кластери
+![Топ кластери](results/figures/06_top_clusters.png)
+
+#### 7. Знайдений цільовий кластер
+![Цільовий кластер](results/figures/07_target_cluster_match.png)
+
+#### 8. Нормалізований прогноз
+![Нормалізований прогноз](results/figures/08_normalized_forecast.png)
+
+#### 9. Прогноз проти фактичних значень
+![Фінальний прогноз](results/figures/09_forecast_vs_actual.png)
+
+#### 10. Сітка порівняння
+![Сітка порівняння](results/figures/10_forecast_comparison_grid.png)
+
+### Метрики
+
+Детальні метрики зберігаються в `results/metrics/`:
+- `forecast_metrics.json` - структуровані дані (MAE, RMSE, MAPE) у форматі JSON
+- `forecast_metrics.txt` - текстовий звіт з метриками та додатковою інформацією
 
 ## Важливі обмеження
 

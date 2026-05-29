@@ -1,0 +1,14 @@
+{
+  "metrics": {
+    "MAE": 491.3504236813195,
+    "RMSE": 603.3690902548304,
+    "MAPE": 2.95817024275433
+  },
+  "additional_info": {
+    "forecast_start_date": "2022-12-25 00:00:00",
+    "forecast_end_date": "2022-12-31 00:00:00",
+    "target_cluster_id": 21,
+    "distance_to_cluster": 0.8008850455879841,
+    "n_training_fragments": 204
+  }
+}

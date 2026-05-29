@@ -54,12 +54,8 @@ ipython_config.py
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
-# Results and outputs (can be regenerated)
-results/figures/*.png
-results/figures/*.jpg
-results/figures/*.svg
+# Results and outputs (keep visualizations, ignore raw metrics)
 results/metrics/*.csv
-results/metrics/*.json
 results/metrics/*.txt
 
 # Keep directory structure
